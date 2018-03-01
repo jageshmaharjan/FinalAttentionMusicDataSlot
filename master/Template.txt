@@ -1,0 +1,190 @@
+play the song {song} by {artist}
+play the song {song}
+play the track {song} by {artist}
+play the track {song}
+play song {song} by {artist}
+play song {song}
+play track {song} by {artist}
+play track {song}
+play {song} by {artist}
+play {song}
+launch the song {song} by {artist}
+launch the song {song}
+launch the track {song} by {artist}
+launch the track {song}
+launch the song by {artist}
+launch song {song} by {artist}
+launch song {song}
+launch track {song} by {artist}
+launch track {song}
+launch {song} by {artist}
+launch {song}
+give me the song {song} by {artist}
+give me the song {song}
+give me the track {song} by {artist}
+give me the track {song}
+give me song {song} by {artist}
+give me song {song}
+give me track {song} by {artist}
+give me track {song}
+give me {song} by {artist}
+give me {song}
+give me a song {song} by {artist}
+give me a track {song} by {artist}
+i want to listen to the song {song} by {artist}
+i want to listen to the song {song}
+i want to listen to the track {song} by {artist}
+i want to listen to the track {song}
+i want to listen to song {song} by {artist}
+i want to listen to song {song}
+i want to listen to track {song} by {artist}
+i want to listen to track {song}
+i want to listen to {song} by {artist}
+i want to listen to {song}
+i want the song {song} by {artist}
+i want the song {song}
+i want the track {song} by {artist}
+i want the track {song}
+i want song {song} by {artist}
+i want song {song}
+i want track {song} by {artist}
+i want track {song}
+i want {song} by {artist}
+i want {song}
+i would like to listen to the song {song} by {artist}
+i would like to listen to the song {song}
+i would like to listen to the track {song} by {artist}
+i would like to listen to the track {song}
+i would like to listen to song {song} by {artist}
+i would like to listen to song {song}
+i would like to listen to track {song} by {artist}
+i would like to listen to track {song}
+i would like to listen to {song} by {artist}
+i would like to listen to {song}
+i would like the song {song} by {artist}
+i would like the song {song}
+i would like the track {song} by {artist}
+i would like the track {song}
+i would like song {song} by {artist}
+i would like song {song}
+i would like track {song} by {artist}
+i would like track {song}
+i would like {song} by {artist}
+i would like {song}
+play a song by {artist}
+play a song {song}
+play a track by {artist}
+play song by {artist}
+play track by {artist}
+play songs by {artist}
+play tracks by {artist}
+i want to listen {song}
+i want to hear {song}
+play music by {artist}
+play {artist}
+launch a song by {artist}
+launch a song {song}
+launch a song {song} by {artist}
+launch a track by {artist}
+launch song by {artist}
+launch track by {artist}
+launch songs by {artist}
+launch tracks by {artist}
+launch music by {artist}
+launch {artist}
+give me a song by {artist}
+give me a track by {artist}
+give me song by {artist}
+give me track by {artist}
+give me songs by {artist}
+give me tracks by {artist}
+give me music by {artist}
+give me {artist}
+i want to listen to a song by {artist}
+i want to listen to a track by {artist}
+i want to listen to song by {artist}
+i want to listen to track by {artist}
+i want to listen to songs by {artist}
+i want to listen to tracks by {artist}
+i want to listen to music by {artist}
+i want to listen to {artist}
+i want a song by {artist}
+i want a track by {artist}
+i want song by {artist}
+i want track by {artist}
+i want songs by {artist}
+i want tracks by {artist}
+i want music by {artist}
+i want {artist}
+i would like to listen to a song by {artist}
+i would like to listen to a track by {artist}
+i would like to listen to song by {artist}
+i would like to listen to track by {artist}
+i would like to listen to songs by {artist}
+i would like to listen to tracks by {artist}
+i would like to listen to music by {artist}
+i would like to listen to {artist}
+i would like a song by {artist}
+i would like a track by {artist}
+i would like song by {artist}
+i would like track by {artist}
+i would like songs by {artist}
+i would like tracks by {artist}
+i would like music by {artist}
+i would like {artist}
+play my playlist {playlist}
+play playlist {playlist}
+launch my playlist {playlist}
+launch playlist {playlist}
+give me my playlist {playlist}
+give me playlist {playlist}
+i want to listen to my playlist {playlist}
+i want to listen to playlist {playlist}
+i want my playlist {playlist}
+i want playlist {playlist}
+i would like to listen to my playlist {playlist}
+i would like to listen to playlist {playlist}
+i would like my playlist {playlist}
+i would like playlist {playlist}
+play my {playlist} playlist
+play {playlist} playlist
+launch my {playlist} playlist
+launch {playlist} playlist
+give me my {playlist} playlist
+give me {playlist} playlist
+i want to listen to my {playlist} playlist
+i want to listen to {playlist} playlist
+i want my {playlist} playlist
+i want {playlist} playlist
+i would like to listen to my {playlist} playlist
+i would like to listen to {playlist} playlist
+i would like my {playlist} playlist
+i would like {playlist} playlist
+play some {genre} music
+play some {genre}
+play {genre} music
+play {genre}
+launch some {genre} music
+launch some {genre}
+launch {genre} music
+launch {genre}
+give me some {genre} music
+give me some {genre}
+give me {genre} music
+give me {genre}
+i want to listen to some {genre} music
+i want to listen to some {genre}
+i want to listen to {genre} music
+i want to listen to {genre}
+i want some {genre} music
+i want some {genre}
+i want {genre} music
+i want {genre}
+i would like to listen to some {genre} music
+i would like to listen to some {genre}
+i would like to listen to {genre} music
+i would like to listen to {genre}
+i would like some {genre} music
+i would like some {genre}
+i would like {genre} music
+i would like {genre}
