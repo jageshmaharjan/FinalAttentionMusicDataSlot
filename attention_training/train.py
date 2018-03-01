@@ -87,7 +87,7 @@ for epoch in range(len(X)):
         # fit model for one epoch on this sequence
         model.fit(Xi, yi, epochs=1, verbose=2)
 # evaluate LSTM
-Xv, Xv_vocab_len, Xv_word_to_ix, Xv_ix_to_word, yv, yv_vocab_len, yv_word_to_ix, yv_ix_to_word  = validation_data()        # Data
+Xv, Xv_vocab_len, Xv_word_to_ix, Xv_ix_to_word, yv, yv_vocab_len, yv_word_to_ix, yv_ix_to_word  = validation_data()     # Data
 total, correct = 100, 0
 for i in range(len(Xv)):
     if (Xv[i] is not None) & (yv[i] is not None):

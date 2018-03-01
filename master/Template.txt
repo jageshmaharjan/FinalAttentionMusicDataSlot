@@ -160,31 +160,18 @@ i would like to listen to my {playlist} playlist
 i would like to listen to {playlist} playlist
 i would like my {playlist} playlist
 i would like {playlist} playlist
-play some {genre} music
-play some {genre}
-play {genre} music
-play {genre}
-launch some {genre} music
-launch some {genre}
-launch {genre} music
+play some {genre} genre
+play {genre} genre
+launch some {genre} genre
+launch {genre} genre
 launch {genre}
-give me some {genre} music
-give me some {genre}
-give me {genre} music
-give me {genre}
-i want to listen to some {genre} music
-i want to listen to some {genre}
-i want to listen to {genre} music
-i want to listen to {genre}
-i want some {genre} music
-i want some {genre}
-i want {genre} music
-i want {genre}
-i would like to listen to some {genre} music
-i would like to listen to some {genre}
-i would like to listen to {genre} music
-i would like to listen to {genre}
-i would like some {genre} music
-i would like some {genre}
-i would like {genre} music
-i would like {genre}
+give me some {genre} genre
+give me {genre} genre
+i want to listen to some {genre} genre
+i want to listen to {genre} genre
+i want some {genre} genre
+i want {genre} genre
+i would like to listen to some {genre} genre
+i would like to listen to {genre} genre
+i would like some {genre} genre
+i would like {genre} genre

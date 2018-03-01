@@ -138,14 +138,25 @@ def find_best_match(matchlist):
     lbl_line = []
     for line in matchlist:
         if 'by' not in query:
-            matcher = line.split('{song}')[0]
-            if query.__contains__(matcher):
-                for i, val in enumerate(query.split()):
-                    if val not in matcher.split():
-                        lbl_line.insert(i, 'song')
-                    else:
-                        lbl_line.insert(i, 'o')
-                return lbl_line
+            if line.__contains__('{song}'):
+                matcher = line.split('{song}')[0]
+                if query.__contains__(matcher):
+                    for i, val in enumerate(query.split()):
+                        if val not in matcher.split():
+                            lbl_line.insert(i, 'song')
+                        else:
+                            lbl_line.insert(i, 'o')
+                    return lbl_line
+            elif line.__contains__('{genre}') & query.__contains__('genre'):
+                matcher = line.split('{genre}')[0]
+                tag = line.split('{genre}')[1]
+                if query.__contains__(matcher):
+                    for i, val in enumerate(query.split()):
+                        if (val not in matcher.split()) & (val != 'genre'):
+                            lbl_line.insert(i, 'genre')
+                        else:
+                            lbl_line.insert(i, 'o')
+                    return lbl_line
         else:
             if (line.__contains__('{artist}')) & ('{song}' not in line):
                 matcher = line.split('{artist}')[0]
@@ -160,7 +171,7 @@ def find_best_match(matchlist):
             else:
                 matcher = line.split('{song}')[0]
                 if query.__contains__(matcher):
-                    artist_val = query.split('by')[1]
+                    artist_val = (' '.join(reversed(query.split()))).split('by')[0] # query.split('by')[1]
                     song_value = query.split(matcher)[1].split('by')[0]
                     for i, val in enumerate(query.split()):
                         if val in song_value.split():
@@ -222,7 +233,7 @@ def blueprint_pattern():
 
             elif line.__contains__('{genre}') & ('{song}' not in line) & ('{artist}' not in line):
                 matcher = line.split('{genre}')[0]
-                if (query.__contains__(matcher)) & ('by' not in query):
+                if (query.__contains__(matcher)) & ('by' not in query) & ('genre' in query):
                     matchlist.append(line)
                     # for i, val in enumerate(query.split()):
                     #     if val not in matcher:
@@ -256,8 +267,8 @@ if __name__ == '__main__':
         print("Using jaccard Simillarity: " + jac_label)
         cos_sim_label = cosine_label()
         print("Using Cosine Simillarity: " + cos_sim_label)
-        rule_based_label = blueprint_label()
-        print("using rule_based_NLP: " + rule_based_label)
+        # rule_based_label = blueprint_label()
+        # print("using rule_based_NLP: " + rule_based_label)
         pattern_rule_label = blueprint_pattern()
         print("using Pattern: \n" + str(pattern_rule_label) + '\n')
         # attn_label = attention_label()
