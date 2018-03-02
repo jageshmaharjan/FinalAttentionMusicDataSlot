@@ -43,9 +43,9 @@ def cosine_label():
     return label
 
 
-def get_xy():
-    whitelist_X = '/home/jugs/PycharmProjects/FinalAttentionMusicDataSlot/Database/whilelist_X'
-    whitelist_Y = '/home/jugs/PycharmProjects/FinalAttentionMusicDataSlot/Database/whitelist_y'
+def get_xy(x_data, y_data):
+    whitelist_X = x_data #'/home/jugs/PycharmProjects/FinalAttentionMusicDataSlot/Database/whilelist_X'
+    whitelist_Y = y_data #'/home/jugs/PycharmProjects/FinalAttentionMusicDataSlot/Database/whitelist_y'
 
     with open(whitelist_X) as fx:
         x = fx.readlines()
@@ -183,8 +183,8 @@ def find_best_match(matchlist):
                     return lbl_line
 
 
-def blueprint_pattern():
-    blueprint = "/home/jugs/PycharmProjects/FinalAttentionMusicDataSlot/master/Template.txt"
+def blueprint_pattern(blueprint_template):
+    blueprint = blueprint_template #"/home/jugs/PycharmProjects/FinalAttentionMusicDataSlot/master/Template.txt"
     templateMap = dict()
     matcher = ''
     matchlist = []
@@ -249,13 +249,20 @@ def blueprint_pattern():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--q', help='input your query', type=str)
+    parser.add_argument('--x', help='whitelist data', type=str)
+    parser.add_argument('--y', help='whitelist label', type=str)
+    parser.add_argument('--b', help='blueprint template', type=str)
     args = parser.parse_args()
+    x_data = args.x
+    y_label = args.y
+    blueprint_template = args.b
+
     query = args.q
     query = query.lower()
     # query = "i would like to listen bad romance by lady gaga"
     # query = query.lower()
 
-    x, y = get_xy()
+    x, y = get_xy(x_data, y_label)
     whitelist_dict = dict(zip(x, y))
 
     label = None
@@ -269,8 +276,11 @@ if __name__ == '__main__':
         print("Using Cosine Simillarity: " + cos_sim_label)
         # rule_based_label = blueprint_label()
         # print("using rule_based_NLP: " + rule_based_label)
-        pattern_rule_label = blueprint_pattern()
-        print("using Pattern: \n" + str(pattern_rule_label) + '\n')
+        pattern_rule_label = blueprint_pattern(blueprint_template)
+        if pattern_rule_label is not None:
+            print("using Pattern: \n" + str(pattern_rule_label) + '\n')
+        else:
+            print("Please try again !")
         # attn_label = attention_label()
         # print("Attention based label: " + attn_label)
     else:

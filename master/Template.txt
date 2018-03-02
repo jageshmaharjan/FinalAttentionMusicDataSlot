@@ -31,6 +31,7 @@ give me {song} by {artist}
 give me {song}
 give me a song {song} by {artist}
 give me a track {song} by {artist}
+give me a track {song}
 i want to listen to the song {song} by {artist}
 i want to listen to the song {song}
 i want to listen to the track {song} by {artist}
@@ -73,6 +74,7 @@ i would like {song} by {artist}
 i would like {song}
 play a song by {artist}
 play a song {song}
+play a song {song} by {artist}
 play a track by {artist}
 play song by {artist}
 play track by {artist}
@@ -83,9 +85,11 @@ i want to hear {song}
 play music by {artist}
 play {artist}
 launch a song by {artist}
+launch a track {song} by {artist}
 launch a song {song}
 launch a song {song} by {artist}
 launch a track by {artist}
+launch a track {song}
 launch song by {artist}
 launch track by {artist}
 launch songs by {artist}
@@ -161,6 +165,7 @@ i would like to listen to {playlist} playlist
 i would like my {playlist} playlist
 i would like {playlist} playlist
 play some {genre} genre
+play the {genre} genre
 play {genre} genre
 launch some {genre} genre
 launch {genre} genre
