@@ -3,3 +3,5 @@
 .idea/
 attention_training/__pycache__/
 weight_model/
+intend_classifier/intent_data
+intend_classifier/sample.py

@@ -2,6 +2,7 @@ import argparse
 import re, math
 from collections import Counter
 import numpy as np
+from nltk import ngrams
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity, cosine_distances
 # from Prediction.attention_lstm_prediction import get_attention_label
@@ -245,6 +246,82 @@ def blueprint_pattern(blueprint_template):
             return find_best_match(matchlist)
 
 
+def get_music_artist_data():
+    music_dict = []
+    artist_dict= []
+    with open(music_f) as fm:
+        dict_m = fm.readlines()
+        for val in dict_m:
+            music_dict.append(val.lower().strip())
+    with open(artist_f) as fa:
+        dict_a = fa.readlines()
+        for val in dict_a:
+            artist_dict.append(val.lower().strip())
+    return music_dict, artist_dict
+
+from nltk.tokenize import word_tokenize
+def chekInDictionary(music, artist, genre):
+    music_dict, artist_dict = get_music_artist_data()
+    n_m = len(music.split())
+    n_a = len(artist.split())
+    new_lbl = ''
+    if music != '':
+        if not music in music_dict:
+            music_data = []
+            for i in range(1,n_m):
+                ngrm_music = ngrams(music.split(), i)
+                ngrm_music = [' '.join(grm) for grm in ngrm_music]
+                for tok in ngrm_music:
+                    music_data.append(tok)
+            for music_tok in music_data:
+                if music_tok in music_dict:
+                    music = music_tok
+    if artist != '':
+        if not artist in artist_dict:
+            artist_data = []
+            for i in range(1, n_a):
+                ngrm_artist = ngrams(artist.split(), i)
+                ngrm_artist = [' '.join(grm) for grm in ngrm_artist]
+                for tok in ngrm_artist:
+                    artist_data.append(tok)
+            for artist_tok in artist_data:
+                if artist_tok in artist_dict:
+                    artist = artist_tok
+
+    for i, val in enumerate(query.split()):
+        if val in music.split():
+            new_lbl += 'music '
+        elif val in artist.split():
+            new_lbl += 'artist '
+        else:
+            new_lbl += 'o '
+    return new_lbl # music, artist
+
+
+def xiaomiDictionary():
+    music_dict, artist_dict = get_music_artist_data()
+    tokens = list()
+    n_tokens = len(query.split())
+    lbl = ''
+    for i in range(1,n_tokens):
+        q_ngrams = ngrams(query.split(), i)
+        q_ngrams = [' '.join(grm) for grm in q_ngrams]
+        for tok in q_ngrams:
+            tokens.append(tok)
+    for tok in tokens:
+        if tok in artist_dict:
+            artist = tok
+        if tok in music_dict:
+            music = tok
+    for val in query.split():
+        if val in music.split():
+            lbl += 'music '
+        elif val in artist.split():
+            lbl += 'artist '
+        else:
+            lbl += 'o '
+    return lbl
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -252,10 +329,17 @@ if __name__ == '__main__':
     parser.add_argument('--x', help='whitelist data', type=str)
     parser.add_argument('--y', help='whitelist label', type=str)
     parser.add_argument('--b', help='blueprint template', type=str)
+    parser.add_argument('--artist', help='artist dictionary', type=str)
+    parser.add_argument('--music', help='song_title dictionary', type=str)
+    # parser.add_argument('--genre', help='genre dicionary', type=str)
     args = parser.parse_args()
     x_data = args.x
     y_label = args.y
     blueprint_template = args.b
+
+    artist_f = args.artist
+    music_f = args.music
+    # genre_dict = args.genre
 
     query = args.q
     query = query.lower()
@@ -276,11 +360,25 @@ if __name__ == '__main__':
         print("Using Cosine Simillarity: " + cos_sim_label)
         # rule_based_label = blueprint_label()
         # print("using rule_based_NLP: " + rule_based_label)
+        music = ''
+        artist = ''
+        genre = ''
         pattern_rule_label = blueprint_pattern(blueprint_template)
         if pattern_rule_label is not None:
+            for i, lbl in enumerate(pattern_rule_label):
+                if lbl == 'music':
+                    music += query.split()[i] + " "
+                if lbl == 'artist':
+                    artist += query.split()[i] + " "
+                if lbl == 'genre':
+                    genre += query.split()[i] + " "
             print("using Pattern: \n" + str(pattern_rule_label) + '\n')
+            new_lbl = chekInDictionary(music.strip(), artist.strip(), genre.strip())
+            print("Using lookup dictionary: \n" + str(new_lbl) + '\n')
         else:
-            print("Please try again !")
+            print("Please try again ! or by using xiaomi_dictionary")
+            new_lbl = xiaomiDictionary()
+            print("Using lookup dictionary: \n" + str(new_lbl) + '\n')
         # attn_label = attention_label()
         # print("Attention based label: " + attn_label)
     else:
